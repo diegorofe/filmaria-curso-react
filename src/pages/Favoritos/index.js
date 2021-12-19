@@ -2,6 +2,7 @@ import {useEffect, useState} from 'react'
 import { Link } from 'react-router-dom';
 import './favoritos.css'
 import loader from '../../assets/loader.gif'
+import { toast } from 'react-toastify';
 
 export default function Favoritos(){
    
@@ -30,6 +31,7 @@ export default function Favoritos(){
 
        setFilmes(filtroFilmes);
        localStorage.setItem('filmes', JSON.stringify(filtroFilmes));
+       toast.success('Filme escluído com sucesso!');
    }
    
     return(
