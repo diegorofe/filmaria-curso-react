@@ -60,7 +60,7 @@ export default function Filme() {
     if(loading) {
         return (
         <div className='container'>
-           <img src={loader} className='img'/>
+           <img src={loader}/>
         </div>  
         )
     }

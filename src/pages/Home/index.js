@@ -26,7 +26,7 @@ function Home() {
   if(loading){
     return (
       <div className='container'>
-         <img src={loader} className='img'/>
+         <img src={loader}/>
       </div>  
       )
   }

@@ -1,16 +1,27 @@
 import {useEffect, useState} from 'react'
 import { Link } from 'react-router-dom';
 import './favoritos.css'
+import loader from '../../assets/loader.gif'
 
 export default function Favoritos(){
    
    const [filmes, setFilmes] = useState([]);
+   const [loading, setLoading] = useState(true);
 
    useEffect( () => {
        const minhaLista = localStorage.getItem('filmes');
 
        setFilmes(JSON.parse(minhaLista) || []);
+       setLoading(false)
    });
+
+   if(loading){
+       return(
+           <div>
+               <img src={loader}/>
+           </div>
+       )
+   }
 
    function handleDelete(id) {
        let filtroFilmes = filmes.filter( (item) => {
@@ -24,6 +35,9 @@ export default function Favoritos(){
     return(
         <div id='meus-filmes'>
             <h1>Meus Filmes</h1>
+
+            {filmes.length === 0 && <span>Você não possui filmes salvos 😌</span>}
+
             <ul>
                 {filmes.map((item) => {
                     return(
