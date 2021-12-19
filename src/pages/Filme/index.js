@@ -36,6 +36,27 @@ export default function Filme() {
 
     }, [history, id]);
 
+    function salvaFilme(){
+        
+        const minhaLista = localStorage.getItem('filmes');
+        
+        let filmesSalvos = JSON.parse(minhaLista) || [];
+
+        //Se tiver algum filme salvo com o mesmo ID, tem que ignorar
+        const hasFilme = filmesSalvos.some( (filmeSalvo) => filmeSalvo.id === filme.id);
+
+        if(hasFilme){
+            alert("Você já possui esse filme salvo")
+            return;
+            //para a execuao do código
+        }
+
+        filmesSalvos.push(filme)
+        localStorage.setItem('filmes', JSON.stringify(filmesSalvos));
+        alert("Filme salvo com sucesso!")
+
+    }
+
     if(loading) {
         return (
         <div className='container'>
@@ -55,7 +76,7 @@ export default function Filme() {
             {filme.sinopse}
 
             <div className='botoes'>
-                <button onClick={() => {}}>Salvar</button>
+                <button onClick={salvaFilme}>Salvar</button>
                 <button>
                     <a target='_blank' href={`https://youtube.com/results?search_query=${filme.nome} Trailer`}>
                     Trailer
