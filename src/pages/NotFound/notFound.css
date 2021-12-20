@@ -1,0 +1,26 @@
+.not-found {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-error {
+    width: 400px;
+    height: 400px;
+}
+
+.not-found a{
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    border: solid;
+    border-color: rgb(243, 195, 106);
+    border-radius:15px;
+    padding: 5px;
+   
+}
+
+.not-found a:hover {
+    background-color: rgb(214, 153, 40)
+}
