@@ -15,12 +15,13 @@
     color: black;
     cursor: pointer;
     border: solid;
-    border-color: rgb(243, 195, 106);
+    border-color: rgb(106, 170, 230);
     border-radius:15px;
     padding: 5px;
    
 }
 
 .not-found a:hover {
-    background-color: rgb(214, 153, 40)
+    background-color: rgb(175, 174, 172);
+    color:#ffff
 }
