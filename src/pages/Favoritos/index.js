@@ -11,10 +11,11 @@ export default function Favoritos(){
 
    useEffect( () => {
        const minhaLista = localStorage.getItem('filmes');
+       console.log(minhaLista)
 
        setFilmes(JSON.parse(minhaLista) || []);
        setLoading(false)
-   });
+   },[]);
 
    if(loading){
        return(
@@ -46,7 +47,7 @@ export default function Favoritos(){
                         <li key={item.id}>
                             <span>{item.nome}</span>
                         <div>
-                        <Link to={`/filme/${item.id}`}>Ver detalhes</Link>
+                        <Link to={`filmes/${item.id}`}>Ver detalhes</Link>
                         <button onClick={() => handleDelete(item.id)}>Excluir</button>
                         </div>
 

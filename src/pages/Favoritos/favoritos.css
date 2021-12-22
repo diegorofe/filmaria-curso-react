@@ -27,10 +27,26 @@ span {
 }
 
 button{
-    margin-left: 10px;
+ 
+    margin-left: 5px;
+    margin-top: 15px;
+    cursor: pointer;
+    border: 0;
+    border-radius: 5px;
+    font-size: 15px;
+    outline: none;
+    padding: 5px;
+    transition: all 0.5
 }
+
+button:hover{
+    background-color: #374247;
+    color: #FFFF;
+    transition: ease-in 0.2s;
+}
+
 
 ul li div a {
     text-decoration: none;
-    color: brown;
+    color: #0081A7;
 }

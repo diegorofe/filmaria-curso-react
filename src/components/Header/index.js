@@ -5,8 +5,11 @@ import { Link } from 'react-router-dom';
 export default function Header (){
     return(
         <header>
-            <Link className="logo" to="/">Filmaria</Link>
-            <Link className='favoritos' to="/favoritos">Salvos</Link>
+            <div className='box'>
+                <Link className="logo" to="/">Share Conhecimento</Link>
+            </div>
+            
+            <Link className='favoritos' to="/favoritos">Favoritos</Link>
         </header>
     )
 }

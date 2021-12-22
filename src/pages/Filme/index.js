@@ -17,7 +17,7 @@ export default function Filme() {
 
         async function loadFilme() {
 
-            const response = await api.get(`r-api/?api=filmes/${id}`)
+            const response = await api.get(`filmes/${id}`)
             
             if(response.data.length === 0){
                 //Tentou acessar um ID que não exisste, navego para Home
@@ -69,21 +69,26 @@ export default function Filme() {
 
     return(
         <div className='filme-info'>
-            <h1>{filme.nome}</h1>
-            <img src={filme.foto} alt={filme.nome}/>
+       
+            <h1>{filme.nome}</h1>            
+            <img src={filme.foto} alt={filme.nome}/>    
+   
+            <div className='titulo'>
+                <h3>Sinopse</h3>
+                <p>{filme.sinopse}</p>
+            </div>
+          
 
-
-            <h3>Sinopse</h3>
-            {filme.sinopse}
-
-            <div className='botoes'>
-                <button onClick={salvaFilme}>Salvar</button>
+          <div className='botoes'>
+          <button onClick={salvaFilme}>Salvar</button>
                 <button>
                     <a target='_blank' href={`https://youtube.com/results?search_query=${filme.nome} Trailer`}>
                     Trailer
                     </a>
                 </button>
-            </div>
+          </div>
+       
+           
         </div>
     )
 }

@@ -13,7 +13,7 @@ function Home() {
   useEffect(() => {
 
   async function loadFilmes(){
-    const response = await api.get('r-api/?api=filmes')
+    const response = await api.get('filmes')
   //  console.log(response.data)
   setFilmes(response.data);
   setLoading(false);
@@ -39,7 +39,7 @@ function Home() {
             <article key={filme.id}>
               <strong>{filme.nome}</strong>
               <img src={filme.foto} alt={filme.nome}/>
-              <Link className="acessar" to={`/filme/${filme.id}`}>Acessar</Link>
+              <Link className="acessar" to={`/filmes/${filme.id}`}>Acessar</Link>
             </article>
           )
         })}
